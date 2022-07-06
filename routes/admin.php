@@ -18,6 +18,7 @@ use App\Http\Controllers\admin\AdminController;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+Route::get('logout',[AdminController::class,'logout']);
 
 // Route::middleware([
 //     'auth:sanctum',
@@ -38,3 +39,4 @@ Route::middleware([
         return view('admin/dashboard');
     })->name('dashboard');
 });
+

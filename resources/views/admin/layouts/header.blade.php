@@ -25,7 +25,7 @@
                         <span>2</span>
                     </i>
                     <div class="dropdown-menu bell-notify-box notify-box">
-                        <span class="notify-title">You have 3 new notifications <a href="#">view all</a></span>
+                        <span class="notify-title">You have 3 new notifications <a href="#">{{ __('view all') }}</a></span>
                         <div class="nofity-list">
                             <a href="#" class="notify-item">
                                 <div class="notify-thumb"><i class="ti-key btn-danger"></i></div>
@@ -85,21 +85,21 @@
                         <img class="avatar user-thumb" src="{{ Auth::user()->profile_photo_url }}" alt="{{ Auth::user()->name }}" />
                     @endif
                     <h4 class="user-name dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }} <i class="fa fa-angle-down"></i></h4>
-                    
+
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{ route('profile.show') }}">{{ __('Profile') }}</a>
-                        <!-- Authentication -->
-                        <form method="POST" action="{{ route('logout') }}" x-data>
-                            @csrf
 
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                    @click.prevent="$root.submit();">
-                                {{ __('Log Out') }}
-                            </a>
+                        <!-- Authentication -->
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <a class="dropdown-item" href="{{ route('logout') }}" @click.prevent="$root.submit();">{{ __('Log Out') }}</a>
                         </form>
+
                     </div>
                 </li>
+
             </ul>
+
         </div>
     </div>
 </div>
